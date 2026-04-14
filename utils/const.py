@@ -1,0 +1,30 @@
+# RegionContext consts
+aggregated_field_name = 'agg_category'
+x_y_field_name = 'coordinates'
+psuedo_sentence_field_name = 'psuedo_sentence'
+poi_aoi_field_name = 'poi_aoi'
+aoi_field_value = 'aoi'
+spabert_emb_field_name = 'spabert_emb'
+spabert_emb_enc_field_name = 'spabert_emb_enc'
+regioncontext_type_field_name = 'regioncontext_type'
+regioncontext_geometry_field_name = 'geometry'
+regioncontext_id_field_name = 'id'
+regioncontext_context_field_name = 'context'
+regioncontext_region_type = 'h3'
+regioncontext_region_level = 11
+
+
+# SpaBERT consts
+psuedo_sentence_info = 'info'
+pivot_id = 'id'
+pivot_context = 'context'
+pivot_geometry = 'geometry'
+pivot_coordinates = 'coordinates'
+neighbor_coordinates = 'coordinates'
+neighbor_distance = 'dist'
+neighbor_info = 'neighbor_info'
+neighbor_context_list = 'context_list'
+neighbor_geometry_list = 'geometry_list'
+neighbor_number = 100
+neighbor_search_radius_meter = 100
+wgs842meters = 111111

@@ -5,3 +5,4 @@ torch==2.0.1
 tqdm==4.65.0
 transformers==4.29.2
 scikit-learn==1.2.0
+kneed==0.8.6

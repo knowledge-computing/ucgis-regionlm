@@ -9,6 +9,8 @@ python-geohash==0.8.5
 tqdm==4.65.0
 torch==2.0.1
 transformers==4.29.2
-kneed
-scipy
-polygeohasher
+kneed==0.8.6
+scipy==1.15.3
+polygeohasher==0.0.5
+matplotlib==3.10.9
+contextily==1.7.1

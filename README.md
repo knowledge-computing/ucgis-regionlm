@@ -2,7 +2,7 @@
 
 RegionLM is a geospatial representation learning pipeline built around SpaBERT-style contextual embeddings for OpenStreetMap (OSM) features. It extracts features inside target regions, converts nearby spatial context into pseudo-sentences, trains or applies a spatial BERT model, aggregates feature embeddings into region embeddings, and clusters the resulting regions.
 
-The repository is currently organized as a script-driven research workflow. The notebook [`1_0_preprocess_OSM_data.ipynb`](https://github.com/knowledge-computing/ucgis-regionlm/blob/main/1_0_preprocess_OSM_data.ipynb) shows the intended end-to-end sequence, while the numbered Python scripts provide CLI entrypoints for each stage.
+The repository is currently organized as a script-driven research workflow. The notebook [`0_regionlm_tutorial.ipynb`](https://github.com/knowledge-computing/ucgis-regionlm/blob/main/0_regionlm_tutorial.ipynb) shows the intended end-to-end sequence, while the numbered Python scripts provide CLI entrypoints for each stage.
 
 ## Prerequisites 
 ### 1. Data and Pretrained Weights

@@ -4,6 +4,48 @@ RegionLM is a geospatial representation learning pipeline built around SpaBERT-s
 
 The repository is currently organized as a script-driven research workflow. The notebook [`1_0_preprocess_OSM_data.ipynb`](https://github.com/knowledge-computing/ucgis-regionlm/blob/main/1_0_preprocess_OSM_data.ipynb) shows the intended end-to-end sequence, while the numbered Python scripts provide CLI entrypoints for each stage.
 
+## Prerequisites 
+### 1. Data and Pretrained Weights
+
+The current workflow expects external datasets and model weights:
+
+- [Model weights and POI data](https://drive.google.com/drive/folders/1eCsvW92ZWvJDkDsUPSaNBb9tpd0ZNmsW?usp=sharing)
+
+You will also need local shapefiles for:
+
+- region boundaries
+- OSM POIs
+- OSM buildings
+- OSM land use
+
+The notebook examples assume a `data/` directory with paths such as:
+
+```text
+data/
+  nyc_regions/region.shp
+  gis_osm_pois_free_1/gis_osm_pois_free_1.shp
+  gis_osm_buildings_a_free_1/gis_osm_buildings_a_free_1.shp
+  gis_osm_landuse_a_free_1/gis_osm_landuse_a_free_1.shp
+```
+
+Important assumptions in the current code:
+- Region attributes default to `BoroName` and `NTAName`.
+- Region and OSM layers must have valid CRS metadata.
+- Geometry columns are written and later re-read as WKT strings in CSV outputs.
+- Default region aggregation uses H3 at resolution `11` from [`utils/const.py`](https://github.com/knowledge-computing/ucgis-regionlm/blob/main/utils/const.py).
+
+### 2. GitHub Repository
+
+The source code is available in the following repository:
+
+https://github.com/knowledge-computing/ucgis-regionlm
+
+Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/knowledge-computing/ucgis-regionlm.git
+```
+  
 ## Pipeline Overview
 
 1. Extract OSM features that intersect a target region.
@@ -41,34 +83,6 @@ Notes:
 - GeoPandas may require system libraries such as GDAL/GEOS/PROJ depending on your platform.
 - Training and embedding generation will use CUDA if PyTorch detects a GPU.
 
-## Data and Pretrained Weights
-
-The current workflow expects external datasets and model weights. The repository README previously referenced the following download location:
-
-- [Model weights and POI data](https://drive.google.com/drive/folders/1eCsvW92ZWvJDkDsUPSaNBb9tpd0ZNmsW?usp=sharing)
-
-You will also need local shapefiles for:
-
-- region boundaries
-- OSM POIs
-- OSM buildings
-- OSM land use
-
-The notebook examples assume a `data/` directory with paths such as:
-
-```text
-data/
-  nyc_regions/region.shp
-  gis_osm_pois_free_1/gis_osm_pois_free_1.shp
-  gis_osm_buildings_a_free_1/gis_osm_buildings_a_free_1.shp
-  gis_osm_landuse_a_free_1/gis_osm_landuse_a_free_1.shp
-```
-
-Important assumptions in the current code:
-- Region attributes default to `BoroName` and `NTAName`.
-- Region and OSM layers must have valid CRS metadata.
-- Geometry columns are written and later re-read as WKT strings in CSV outputs.
-- Default region aggregation uses H3 at resolution `11` from [`utils/const.py`](https://github.com/knowledge-computing/ucgis-regionlm/blob/main/utils/const.py).
 
 ## Quick Start
 

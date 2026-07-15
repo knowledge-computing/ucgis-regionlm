@@ -11,7 +11,7 @@ regioncontext_geometry_field_name = 'geometry'
 regioncontext_id_field_name = 'id'
 regioncontext_context_field_name = 'context'
 regioncontext_region_type = 'h3'
-regioncontext_region_level = 10
+regioncontext_region_level = 9
 
 
 # SpaBERT consts

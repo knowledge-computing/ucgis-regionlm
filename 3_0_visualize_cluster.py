@@ -4,6 +4,7 @@ from shapely import wkt
 import matplotlib.pyplot as plt
 import contextily as ctx
 import argparse 
+from matplotlib.colors import ListedColormap
 
 
 
@@ -38,19 +39,37 @@ def visualize(args):
 
     fig, ax = plt.subplots(figsize=(14, 14))
 
+
+    colors = (
+        list(plt.cm.tab20.colors)
+        + list(plt.cm.tab20b.colors)
+        + list(plt.cm.tab20c.colors)
+    )
+
+    cmap = ListedColormap(colors)
+
+    # gdf.plot(
+    #     ax=ax,
+    #     column="regioncontext_type",
+    #     cmap="tab20",
+    #     edgecolor="black",
+    #     linewidth=0.2,
+    #     alpha=0.8,
+    #     legend=True,
+    # )
+
     gdf.plot(
         ax=ax,
         column="regioncontext_type",
-        cmap="tab20",
+        cmap=cmap,
         edgecolor="black",
         linewidth=0.2,
-        alpha=0.8,
         legend=True,
     )
 
-    # Zoom-in to Downtown Manhattan bounding box (Web Mercator)
-    ax.set_xlim(-8250000, -8225000)
-    ax.set_ylim(4965000, 4990000)
+    # # Zoom-in to Downtown Manhattan bounding box (Web Mercator)
+    # ax.set_xlim(-8250000, -8225000)
+    # ax.set_ylim(4965000, 4990000)
 
     ctx.add_basemap(ax, source=ctx.providers.CartoDB.Positron)
 

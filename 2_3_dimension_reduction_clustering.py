@@ -13,8 +13,8 @@ def dimension_reduction(args):
 
 def clustering(args):
     # Clustering
-    min_component = 3  # 10 - 50
-    max_component = 4
+    min_component = 10 # 10 - 50
+    max_component = 50
 
     kmeans_clustering = KMeansClustering()
     kmeans_clustering.fit_predict(input_csv_file_path=args.output_dimension_reduce_csv,
@@ -32,7 +32,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
 
-    # dimension_reduction(args)
+    dimension_reduction(args)
     clustering(args)
 
 

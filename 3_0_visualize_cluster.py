@@ -62,11 +62,8 @@ def visualize(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    # parser.add_argument('--input_cluster_csv', type=str, required=True, default = 'data/nyc_osm_pois/pois/pois_pseudo_sentence_v2_nn100_sdm100_cluster.csv')
-    # parser.add_argument('--output_png', type=str, required=True, default = 'data/nyc_osm_pois/h3_clusters.png')
-    parser.add_argument('--input_cluster_csv', type=str,  default = 'data/nyc_osm_pois/pois/pois_pseudo_sentence_v2_nn100_sdm100_cluster.csv')
-    parser.add_argument('--output_png', type=str,  default = 'data/nyc_osm_pois/h3_clusters.png')
-    
+    parser.add_argument('--input_cluster_csv', type=str, required=True, default = 'data/nyc_osm_pois/pois/pois_pseudo_sentence_v2_nn100_sdm100_cluster.csv')
+    parser.add_argument('--output_png', type=str, required=True, default = 'data/nyc_osm_pois/h3_clusters.png')
 
     args = parser.parse_args()
 
